@@ -1,4 +1,5 @@
 import {
+    formatWorkBook,
     makePet
 } from './objects.js';
 
@@ -24,3 +25,21 @@ test('makes a pet', (expect) => {
     });
 });
 
+test('return only work and writer', (expect) => {
+    const actual = formatWorkBook({
+        author: {
+            last: 'wells',
+            first: 'h.g.'
+        },
+        book: {
+            title: 'war of the worlds',
+            genre: 'scifi',
+            word: 312000
+        }
+    });
+
+    expect.deepEqual(actual, {
+        work: 'war of the worlds',
+        writer: 'h.g. wells'
+    });
+});

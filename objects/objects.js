@@ -8,8 +8,10 @@ export function makePet(name, type, age, food, toys) {
     };
 }
 
-export function formatWorkBook(work, writer) {
+export function formatWorkBook(data) {
     return {
-        
-    }
+        work: data.book.title,
+        // you actually need a space between '' for it to be a space, who knew?
+        writer: data.author.first + ' ' + data.author.last,
+    };
 }
